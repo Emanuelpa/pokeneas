@@ -9,7 +9,8 @@ router.get('/', (req, res) => {
 router.get('/pokenea', (req, res) => {
     const pokenea = getRandomPokenea()
     const { id, nombre, altura, habilidad } = pokenea
-    res.json({ id, nombre, altura, habilidad })
+    const containerId = getContainerId()
+    res.json({ id, nombre, altura, habilidad, containerId })
 })
 
 router.get('/pokenea/image', (req, res) => {
